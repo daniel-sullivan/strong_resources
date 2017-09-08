@@ -83,7 +83,9 @@ module StrongResources
                    destroy: false,
                    &blk)
       resource_name = resource || name
+
       related_resource = self.class.from(resource_name, &blk)
+
       add_relation(name, related_resource, only, except, disassociate, destroy)
     end
 
